@@ -1,0 +1,44 @@
+language: node_js
+node_js:
+  - node
+dist: bionic
+sudo: required
+
+notifications:
+  email:
+    receipients:
+    - vinc3nt86@gmail.com
+    on_success: always
+    on_failure: never
+  slack: csf-2019:ONgoUzwpaNRcrOZfcymFsagb
+    on_success: always
+    on_failure: always
+
+branches:
+  only:
+    - master
+
+before_script:
+  - npm install -g @angular/cli
+  - npm i -g now
+
+script:
+  - ng build --prod --base-href https://vincentgoay.github.io/weather-apps/
+  - ng build --prod --output-path dist/now/weather-app --base-href https://weather-apps-au2ctuqfs.now.sh/
+  - npm run export
+  
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/weather-app
+  on:
+    branch: master
+
+deploy:
+  provider: script
+  script: npm run deploy
+  skip_cleanup: true
+  local_dir: dist/now/weather-app
+  on:
+    branch: master

@@ -1,0 +1,13 @@
+<div class="top-label" fxLayout="row" fxLayoutAlign="space-between center">
+    <span>{{ data.cityName }}</span>
+    <button (click)="back()">Back</button>
+</div>
+
+<div id="weather-detail-container">
+    <p> Temp: {{ data.temp }} </p>
+    <p> Pressure: {{ data.pressure }} </p>
+    <p> Humidity: {{ data.humidity }} </p>
+    <p> Wind Degree: {{ data.windDegree }} </p>
+    <p> Wind Speed: {{ data.windSpeed }} </p>
+    <p> Description: {{ data.description }} </p>
+</div>

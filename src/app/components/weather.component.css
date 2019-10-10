@@ -1,0 +1,14 @@
+.top-label {
+    margin: 4vw;
+}
+
+button {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+#weather-detail-container {
+    margin: 4vw;
+    border: 1px black solid;
+    min-height: 100px;
+}

@@ -1,0 +1,19 @@
+<form class="side-padding" #form="ngForm" (ngSubmit)="addCity(form)" fxLayout="row" fxLayoutAlign="space-around">
+    <mat-label>City: </mat-label>
+    <input type="text" name="city" placeholder="City Name" ngModel>
+    <button type="submit">Add</button>
+</form>
+
+<div class="side-padding top-margin">
+    <!-- <app-list [cities]="cities"></app-list> -->
+    <mat-nav-list>
+        <div class="solid-border list-padding" *ngIf="cities.length <= 0">
+            <span>There is no country added</span>
+        </div>
+        <mat-list-item class="solid-border list-padding" *ngFor="let city of cities; let i = index;">
+            <a [routerLink]="['/cities', cities[i].name, cities]">
+                {{ city.name }}
+            </a>
+        </mat-list-item>
+    </mat-nav-list>
+</div>
