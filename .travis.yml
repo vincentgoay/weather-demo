@@ -22,20 +22,11 @@ before_script:
 
 script:
   - ng build --prod --base-href https://vincentgoay.github.io/weather-demo/
-  - ng build --prod --output-path dist/now/weather-app --base-href https://weather-demo-6herltmo1.now.sh
   
 deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   local_dir: dist/weather-app
-  on:
-    branch: master
-
-deploy:
-  provider: script
-  script: npm run deploy
-  skip_cleanup: true
-  local_dir: dist/now/weather-app
   on:
     branch: master
