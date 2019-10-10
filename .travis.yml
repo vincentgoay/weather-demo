@@ -24,7 +24,7 @@ before_script:
 
 script:
   - ng build --prod --base-href https://vincentgoay.github.io/weather-demo/
-  - ng build --prod --output-path dist/now/weather-app --base-href https://weather-apps-au2ctuqfs.now.sh/
+  - ng build --prod --output-path dist/now/weather-app --base-href https://weather-demo-6herltmo1.now.sh
   - npm run export
   
 deploy:
