@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - node
+
 dist: bionic
 sudo: required
 
@@ -10,9 +11,6 @@ notifications:
     - vinc3nt86@gmail.com
     on_success: always
     on_failure: never
-  slack: csf-2019:ONgoUzwpaNRcrOZfcymFsagb
-    on_success: always
-    on_failure: always
 
 branches:
   only:
@@ -25,7 +23,6 @@ before_script:
 script:
   - ng build --prod --base-href https://vincentgoay.github.io/weather-demo/
   - ng build --prod --output-path dist/now/weather-app --base-href https://weather-demo-6herltmo1.now.sh
-  - npm run export
   
 deploy:
   provider: pages
